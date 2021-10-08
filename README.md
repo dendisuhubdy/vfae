@@ -4,6 +4,7 @@ Christos Louizos, Kevin Swersky, Yujia Li, Max Welling, Richard Zemel
 
 ## Abstract
 
+```
 We investigate the problem of learning representations that are invariant to certain
 nuisance or sensitive factors of variation in the data while retaining as much
 of the remaining information as possible. Our model is based on a variational
@@ -16,3 +17,4 @@ an additional penalty term based on the “Maximum Mean Discrepancy”
 be efficiently trained on data and show in experiments that this method is more
 effective than previous work in removing unwanted sources of variation while
 maintaining informative latent representations.
+```
