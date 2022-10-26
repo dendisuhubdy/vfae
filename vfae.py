@@ -49,55 +49,55 @@ class VFAE_params(object):
         
         params = [ theano.shared(value=value, name=name, borrow=True)
             for value, name in zip(params_value, params_name)]
-        
+
         self.EC1_params = []
         self.EC2_params = []
         self.EC3_params = []
         self.DC1_params = []
         self.DC2_params = []
-        
-        i = 0;        
+
+        i = 0;
         params_num = [len(struct.encoder1.share.activation), len(struct.encoder1.mu.activation), len(struct.encoder1.sigma.activation)]
-        for k in range(len(params_num)):
+        for item in params_num:
             tmp=[]
-            for j in range(params_num[k]):
+            for _ in range(item):
                 tmp.append(params[i])
                 i = i+1
                 tmp.append(params[i])
                 i = i+1
             self.EC1_params.append(tmp)
-            
+
         params_num = [len(struct.encoder2.share.activation), len(struct.encoder2.mu.activation), len(struct.encoder2.sigma.activation)]
-        for k in range(len(params_num)):
+        for item_ in params_num:
             tmp=[]
-            for j in range(params_num[k]):
+            for _ in range(item_):
                 tmp.append(params[i])
                 i = i+1
                 tmp.append(params[i])
                 i = i+1
             self.EC2_params.append(tmp)      
-        
-        for j in range(len(struct.encoder3.activation)):
+
+        for _ in range(len(struct.encoder3.activation)):
+            self.EC3_params.append(params[i])
+            i = i+1
             self.EC3_params.append(params[i])
             i = i+1        
-            self.EC3_params.append(params[i])
-            i = i+1        
-        
-        
+
+
         params_num = [len(struct.decoder1.share.activation), len(struct.decoder1.mu.activation), len(struct.decoder1.sigma.activation)]
-        for k in range(len(params_num)):
+        for item__ in params_num:
             tmp=[]
-            for j in range(params_num[k]):
+            for _ in range(item__):
                 tmp.append(params[i])
                 i = i+1
                 tmp.append(params[i])
                 i = i+1
             self.DC1_params.append(tmp)
-            
+
         params_num = [len(struct.decoder2.share.activation), len(struct.decoder2.mu.activation), len(struct.decoder2.sigma.activation)]
-        for k in range(len(params_num)):
+        for item___ in params_num:
             tmp=[]
-            for j in range(params_num[k]):
+            for _ in range(item___):
                 tmp.append(params[i])
                 i = i+1
                 tmp.append(params[i])
@@ -110,49 +110,49 @@ class VFAE_params(object):
         self.EC3_params = []
         self.DC1_params = []
         self.DC2_params = []
-        
-        i = 0;        
+
+        i = 0;
         params_num = [len(struct.encoder1.share.activation), len(struct.encoder1.mu.activation), len(struct.encoder1.sigma.activation)]
-        for k in range(len(params_num)):
+        for item in params_num:
             tmp=[]
-            for j in range(params_num[k]):
+            for _ in range(item):
                 tmp.append(params[i])
                 i = i+1
                 tmp.append(params[i])
                 i = i+1
             self.EC1_params.append(tmp)
-            
+
         params_num = [len(struct.encoder2.share.activation), len(struct.encoder2.mu.activation), len(struct.encoder2.sigma.activation)]
-        for k in range(len(params_num)):
+        for item_ in params_num:
             tmp=[]
-            for j in range(params_num[k]):
+            for _ in range(item_):
                 tmp.append(params[i])
                 i = i+1
                 tmp.append(params[i])
                 i = i+1
             self.EC2_params.append(tmp)      
-        
-        for j in range(len(struct.encoder3.activation)):
+
+        for _ in range(len(struct.encoder3.activation)):
+            self.EC3_params.append(params[i])
+            i = i+1
             self.EC3_params.append(params[i])
             i = i+1        
-            self.EC3_params.append(params[i])
-            i = i+1        
-        
-        
+
+
         params_num = [len(struct.decoder1.share.activation), len(struct.decoder1.mu.activation), len(struct.decoder1.sigma.activation)]
-        for k in range(len(params_num)):
+        for item__ in params_num:
             tmp=[]
-            for j in range(params_num[k]):
+            for _ in range(item__):
                 tmp.append(params[i])
                 i = i+1
                 tmp.append(params[i])
                 i = i+1
             self.DC1_params.append(tmp)
-            
+
         params_num = [len(struct.decoder2.share.activation), len(struct.decoder2.mu.activation), len(struct.decoder2.sigma.activation)]
-        for k in range(len(params_num)):
+        for item___ in params_num:
             tmp=[]
-            for j in range(params_num[k]):
+            for _ in range(item___):
                 tmp.append(params[i])
                 i = i+1
                 tmp.append(params[i])
